@@ -3,10 +3,10 @@
 #include <math.h>
 
 int countIntersectionPoints(int x1, int y1, int r1, int x2, int y2, int r2) {
-    // Îá÷èñëåííÿ â³äñòàí³ ì³æ öåíòðàìè ê³ë
+    // ÐžÐ±Ñ‡Ð¸ÑÐ»ÐµÐ½Ð½Ñ Ð²Ñ–Ð´ÑÑ‚Ð°Ð½Ñ– Ð¼Ñ–Ð¶ Ñ†ÐµÐ½Ñ‚Ñ€Ð°Ð¼Ð¸ ÐºÑ–Ð»
     double distance = sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 
-    // Ïåðåâ³ðêà â³äñóòíîñò³ ïåðåòèíó òà/àáî íåñê³í÷åííîãî ïåðåòèíó
+    // ÐŸÐµÑ€ÐµÐ²Ñ–Ñ€ÐºÐ° Ð²Ñ–Ð´ÑÑƒÑ‚Ð½Ð¾ÑÑ‚Ñ– Ð¿ÐµÑ€ÐµÑ‚Ð¸Ð½Ñƒ Ñ‚Ð°/Ð°Ð±Ð¾ Ð½ÐµÑÐºÑ–Ð½Ñ‡ÐµÐ½Ð½Ð¾Ð³Ð¾ Ð¿ÐµÑ€ÐµÑ‚Ð¸Ð½Ñƒ
     if (distance > r1 + r2 || distance < fabs(r1 - r2))
         return 0;
     else if (distance == 0 && r1 == r2)
@@ -20,12 +20,13 @@ int countIntersectionPoints(int x1, int y1, int r1, int x2, int y2, int r2) {
 int main() {
     SetConsoleCP(1251);
   SetConsoleOutputCP(1251);
+// Ð’Ð²Ð¾Ð´ Ð´Ð°Ð½Ð¸Ñ… Ð· ÐºÐ»Ð°Ð²Ñ–Ð°Ñ‚ÑƒÑ€Ð¸
     int x1, y1, r1, x2, y2, r2;
-    printf("Ââåä³òü êîîðäèíàòè òà ðàä³óñè ê³ë, íàïðèêëàä: (x1, y1, r1, x2, y2, r2): ");
+    printf("Ð’Ð²ÐµÐ´Ñ–Ñ‚ÑŒ ÐºÐ¾Ð¾Ñ€Ð´Ð¸Ð½Ð°Ñ‚Ð¸ Ñ‚Ð° Ñ€Ð°Ð´Ñ–ÑƒÑÐ¸ ÐºÑ–Ð», Ð½Ð°Ð¿Ñ€Ð¸ÐºÐ»Ð°Ð´: (x1, y1, r1, x2, y2, r2): ");
     scanf("%d %d %d %d %d %d", &x1, &y1, &r1, &x2, &y2, &r2);
-
+// Ð’Ð¸Ð²ÐµÐ´ÐµÐ½Ð½Ñ Ñ€ÐµÐ·ÑƒÐ»ÑŒÑ‚Ð°Ñ‚Ñƒ Ð½Ð° ÐµÐºÑ€Ð°Ð½
     int result = countIntersectionPoints(x1, y1, r1, x2, y2, r2);
-    printf("Ê³ëüê³ñòü òî÷îê ïåðåòèíó: %d\n", result);
+    printf("ÐšÑ–Ð»ÑŒÐºÑ–ÑÑ‚ÑŒ Ñ‚Ð¾Ñ‡Ð¾Ðº Ð¿ÐµÑ€ÐµÑ‚Ð¸Ð½Ñƒ: %d\n", result);
 
     return 0;
 }
